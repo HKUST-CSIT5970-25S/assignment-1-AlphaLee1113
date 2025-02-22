@@ -5,9 +5,9 @@
 
 ---
 
-### Name: 
-### Student Id: 
-### Email: 
+### Name: Lee Wai Kiu
+### Student Id: 20769482
+### Email: wkleeak@connect.ust.hk
 
 ---
 
