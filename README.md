@@ -35,7 +35,7 @@
     | `c5d.large` |  7859 MIPS   |   14983.24MB/s   |
 
     > Region: US East (N. Virginia). Use `Ubuntu Server 22.04 LTS (HVM)` as AMI.
-    > Yes the performance increases along with the number of vCPUs and memory resources. It is because it is obvious that when there are 2 vCPUs (c5d.large), its performance is twice as good as the VM that only have 1 vCPU (t2.micro). Meanwhile, the  8GIB VM (m5.large) has a much better performance than the 1GIB VM(t2.micro) in terms of memory performance.
+    > Yes the performance increases along with the number of vCPUs and memory resources. It is because it is obvious that when there are 2 vCPUs (c5d.large), its performance is twice as good as the VM that only have 1 vCPU (t2.micro). Meanwhile, the  4GIB VM (t2.medium) has a much better performance than the 1GIB VM(t2.micro) in terms of memory performance.
 
 ## Question 2: Measure the EC2 Network performance
 
