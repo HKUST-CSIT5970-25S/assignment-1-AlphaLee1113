@@ -15,7 +15,14 @@
 
 1. (1 mark) Report the name of measurement tool used in your measurements (you are free to choose *any* open source measurement software as long as it can measure CPU and memory performance). Please describe your configuration of the measurement tool, and explain why you set such a value for each parameter. Explain what the values obtained from measurement results represent (e.g., the value of your measurement result can be the execution time for a scientific computing task, a score given by the measurement tools or something else).
 
-    > Your answer goes here.
+    >To evaluate CPU and memory performance, Phoronix Test Suite is used as the measurement tool in this lab. The tool is installed by using "sudo dpkg -i phoronix*.deb" and the configuration is kept to default. I decided to keep the configuration default because this config is good enough for finding the CPU and memeory performance.
+    > For CPU test, i will collect the average compressing rating to evaluate the CPU performance. To get the value, the command "phoronix-test-suite run pts/compress-7zip" is used.
+    > For memory test, i will collect the average copy memory per second to evaluate the memory performance. To get the value, the command "phoronix-test-suite run pts/ramspeed" is used.
+    > 
+    > For networking performance, iperf is used.
+    > For TCP performance, I will set the parameter to 256K because it can allow me to collect the performance data in a shorter time. The bandwidth between the server and client will be collected to evaluate the TCP performance. The command used to collect this data is "iperf -s -w 256K" and "iperf -c [Server IP address] -w 256K".
+    >
+    >For measuring RTT, ping is used since it is a built-in command and easy to use. To evaluate the RTT performance, i will set the parameter to simply sending 1 packet so that i can collect the result quickly. The RTT for transmitting and receiving 1 packet will be collected to evaluate the RTT performance. The command used is "ping -c 1 [Server IP address]".
 
 2. (1 mark) Run your measurement tool on general purpose `t2.micro`, `t2.medium`, and `c5d.large` Linux instances, respectively, and find the performance differences among these instances. Launch all the instances in the **US East (N. Virginia)** region. Does the performance of EC2 instances increase commensurate with the increase of the number of vCPUs and memory resource?
 
