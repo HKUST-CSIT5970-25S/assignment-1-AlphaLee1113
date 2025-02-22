@@ -31,11 +31,11 @@
     | Size        | CPU performance | Memory performance |
     | ----------- | --------------- | ------------------ |
     | `t2.micro` |      3604 MIPS  |  8957.84 MB/s|
-    | `t2.medium`  |  7097 MIPS    | 13809.65MB/s    |
+    | `t2.medium`  |  7397 MIPS    | 13809.65MB/s    |
     | `c5d.large` |  7859 MIPS   |   14983.24MB/s   |
 
     > Region: US East (N. Virginia). Use `Ubuntu Server 22.04 LTS (HVM)` as AMI.
-    > Yes the performance increases along with the number of vCPUs and memory resources. It is because it is obvious that when there are 2 vCPUs (c5d.large), its performance is twice as good as the VM that only have 1 vCPUs (t2.micro). Meanwhile, the  8GIB VM (c5d.large) has a much better performance than the 2GIB VM(t2.micro) in terms of memory performance.
+    > Yes the performance increases along with the number of vCPUs and memory resources. It is because it is obvious that when there are 2 vCPUs (c5d.large), its performance is twice as good as the VM that only have 1 vCPU (t2.micro). Meanwhile, the  8GIB VM (m5.large) has a much better performance than the 1GIB VM(t2.micro) in terms of memory performance.
 
 ## Question 2: Measure the EC2 Network performance
 
@@ -43,12 +43,12 @@
 
     | Type                      | TCP b/w (Mbps) | RTT (ms) |
     | ------------------------- | -------------- | -------- |
-    | `t3.medium` - `t3.medium` |                |          |
-    | `m5.large` - `m5.large`   |                |          |
-    | `c5n.large` - `c5n.large` |                |          |
-    | `t3.medium` - `c5n.large` |                |          |
-    | `m5.large` - `c5n.large`  |                |          |
-    | `m5.large` - `t3.medium`  |                |          |
+    | `t3.medium` - `t3.medium` |  1036Mbps  |  0.642ms    |
+    | `m5.large` - `m5.large`   | 4983Mbps   |0.335ms  |
+    | `c5n.large` - `c5n.large` | 4897Mbps  | 0.263ms |
+    | `t3.medium` - `c5n.large` | 1029Mbps    |0.434ms|
+    | `m5.large` - `c5n.large`  | 4904Mbps  | 0.288ms  |
+    | `m5.large` - `t3.medium`  | 2722Mbps    |  0.441ms |
 
     > Region: US East (N. Virginia). Use `Ubuntu Server 22.04 LTS (HVM)` as AMI. Note: Use private IP address when using iPerf within the same region. You'll need iPerf for measuring TCP bandwidth and Ping for measuring Round-Trip time.
 
@@ -56,8 +56,8 @@
 
     | Connection                | TCP b/w (Mbps) | RTT (ms) |
     | ------------------------- | -------------- | -------- |
-    | N. Virginia - Oregon      |                |          |
-    | N. Virginia - N. Virginia |                |          |
-    | Oregon - Oregon           |                |          |
+    | N. Virginia - Oregon      |25.6Mbps	  | 60.723ms |
+    | N. Virginia - N. Virginia |4988Mbps     | 0.234ms|
+    | Oregon - Oregon           | 9499Mbps     |0.098ms |
  
     > Region: US East (N. Virginia), US West (Oregon). Use `Ubuntu Server 22.04 LTS (HVM)` as AMI. All instances are `c5.large`. Note: Use public IP address when using iPerf within the same region.
